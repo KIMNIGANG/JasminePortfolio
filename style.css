@@ -96,17 +96,22 @@ ul {
 .section {
   text-align: center;
   padding: 50px;
-  max-width: 1200px;
   margin: auto;
+}
+
+.section_container {
+  max-width: 1200px;
 }
 
 /* Navbar */
 #navbar {
+  position: sticky;
+  top: 0px;
   display: flex;
   justify-content: space-between;
   background-color: var(--color-pink);
   align-items: center;
-  padding: 8px;
+  padding: 2px;
 }
 
 .navbar__logo {
@@ -129,6 +134,7 @@ ul {
   padding: 8px 12px;
   margin: 0 4px;
   cursor: pointer;
+  transition: background-color var(--animation-duration);
   border-radius: var(--size-border-radius);
 }
 
@@ -138,7 +144,7 @@ ul {
 
 .navbar_item:hover {
   background-color: var(--color-dark-pink);
-  transition: background-color 300ms;
+  transition: background-color var(--animation-duration);
 }
 
 /* Home */
@@ -169,6 +175,12 @@ ul {
   margin: 24px;
   padding: 8px 12px;
   color: var(--color-white);
+  transition: all var(--animation-duration);
+}
+
+.home_contact:hover {
+  background-color: var(--color-light-grey);
+  transition: all var(--animation-duration);
 }
 
 /* About */
@@ -192,7 +204,6 @@ ul {
 }
 
 .major_icon img:hover {
-  cursor: pointer;
   border-radius: 50%;
   transform: rotate(-20deg) scale(1.1);
   background-color: var(--color-pink);
@@ -235,4 +246,66 @@ ul {
 
 .job_period {
   font-size: var(--font-micro);
+}
+
+/* Skills */
+#skills {
+  background-color: var(--color-yellow);
+}
+
+.skills_container {
+  margin: auto;
+}
+
+.skillset {
+  margin: 20px 0;
+  background-color: var(--color-light-grey);
+  display: flex;
+}
+
+.skillset_title {
+  color: var(--color-light-white);
+}
+.skillset_left {
+  padding: 20px 40px;
+  color: var(--color-light-white);
+  background-color: var(--color-dark-grey);
+  flex-basis: 60%;
+}
+
+.skillset_right {
+  flex-basis: 40%;
+}
+
+.skill_description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill_bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-grey);
+}
+
+.skill_value {
+  height: 2px;
+  background-color: yellow;
+}
+
+.skill {
+  margin-bottom: 32px;
+}
+
+.tools {
+  color: var(--color-light-white);
+  background-color: var(--color-grey);
+}
+.etc {
+  color: var(--color-light-white);
+}
+
+.tools,
+.etc {
+  padding: 20px;
 }
