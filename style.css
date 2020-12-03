@@ -105,8 +105,6 @@ ul {
 
 /* Navbar */
 #navbar {
-  position: sticky;
-  top: 0px;
   display: flex;
   justify-content: space-between;
   background-color: var(--color-pink);
@@ -308,4 +306,106 @@ ul {
 .tools,
 .etc {
   padding: 20px;
+}
+
+/* Work */
+
+.work_categories {
+  margin: 40px;
+}
+
+.category_btn {
+  border: solid 1px var(--color-dark-grey);
+  padding: 8px 48px;
+  margin: 5px 5px;
+  font-size: var(--font-regular);
+  border-radius: var(--size-border-radius);
+}
+
+.category_btn.active,
+.category_btn:hover {
+  background-color: var(--color-pink);
+  color: var(--color-white);
+  transition: background-color var(--animation-duration);
+}
+
+.category_btn.active .category_count,
+.category_btn:hover .category_count {
+  opacity: 1;
+  top: 0;
+  transition: var(--animation-duration);
+}
+
+.category_count {
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  color: var(--color-white);
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  display: inline-block;
+  position: relative;
+  top: -20px;
+  opacity: 0;
+}
+
+.work_projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 300px;
+  width: 300px;
+  margin: 2px;
+  background-color: var(--color-light-white);
+}
+
+.work_projects img {
+  width: 80%;
+  height: 80%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.project_description {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all var(--animation-duration);
+}
+
+.project:hover .project_description {
+  opacity: 0.8;
+  transform: translateY(0px);
+  transition: all var(--animation-duration);
+}
+
+.project_description h3 {
+  color: var(--color-white);
+}
+
+.project_description h3:after {
+  content: "";
+  display: block;
+  position: relative;
+  left: 50%;
+  margin-left: -20px;
+  margin-top: 8px;
+  height: 2px;
+  width: 30px;
+  background-color: var(--color-light-grey);
 }
