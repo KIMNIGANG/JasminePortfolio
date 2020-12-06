@@ -1,5 +1,13 @@
 "use strict";
 
+//function
+
+//scroll to sector
+function scrollToSelector(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+}
+
 //  when scroll down navbar show
 
 document.addEventListener("scroll", () => {
@@ -27,7 +35,16 @@ const navbarbutton = document.querySelector(".navbar_menu");
 navbarbutton.addEventListener("click", (event) => {
   const target = event.target;
   const link = target.dataset.link;
-
+  if (link == null) {
+    return;
+  }
   const scrollTo = document.querySelector(link);
   scrollTo.scrollIntoView({ behavior: "smooth" });
+});
+
+// Home contact me button
+
+const contactMeButton = document.querySelector(".home_contact");
+contactMeButton.addEventListener("click", (event) => {
+  scrollToSelector(event.target.dataset.link);
 });
