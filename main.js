@@ -48,3 +48,13 @@ const contactMeButton = document.querySelector(".home_contact");
 contactMeButton.addEventListener("click", (event) => {
   scrollToSelector(event.target.dataset.link);
 });
+
+//Scroll home fading
+
+document.addEventListener("scroll", () => {
+  const home = document.querySelector(".home_container");
+  const homeHeight = home.getBoundingClientRect().height;
+  let y = window.scrollY;
+  let fading = 1 - y / homeHeight;
+  home.style.opacity = fading;
+});
