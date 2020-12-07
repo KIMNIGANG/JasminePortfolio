@@ -55,6 +55,26 @@ document.addEventListener("scroll", () => {
   const home = document.querySelector(".home_container");
   const homeHeight = home.getBoundingClientRect().height;
   let y = window.scrollY;
-  let fading = 1 - y / homeHeight;
+  let fading = 1.2 - y / homeHeight;
   home.style.opacity = fading;
+});
+
+//Scroll Top button
+
+const topkey = document.querySelector(".topkey_button");
+topkey.addEventListener("click", (event) => {
+  scrollToSelector(event.target.dataset.link);
+});
+
+//View Top Button
+
+document.addEventListener("scroll", () => {
+  const topkey_button = document.querySelector(".topkey_button");
+  const homeHeight = home.getBoundingClientRect().height;
+  let y = window.scrollY;
+  if (y > homeHeight / 2) {
+    topkey_button.classList.add("visible");
+  } else {
+    topkey_button.classList.remove("visible");
+  }
 });

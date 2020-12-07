@@ -103,6 +103,34 @@ ul {
   max-width: 1200px;
 }
 
+/* TopKey */
+.topkey_button {
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  position: fixed;
+  right: 0.5vh;
+  bottom: 10vh;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  padding-top: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms;
+}
+
+.topkey_button.visible {
+  opacity: 1;
+  pointer-events: auto;
+
+  transition: opacity 300ms;
+  display: block;
+}
+
+.topkey_button i {
+  color: var(--color-white);
+}
+
 /* Navbar */
 #navbar {
   position: fixed;
