@@ -78,3 +78,24 @@ document.addEventListener("scroll", () => {
     topkey_button.classList.remove("visible");
   }
 });
+
+//Projects filter
+
+const workBtn = document.querySelector(".work_categories");
+const projectContainer = document.querySelector(".work_projects");
+const projects = document.querySelectorAll(".project");
+workBtn.addEventListener("click", (event) => {
+  const filter =
+    event.target.dataset.filter || event.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+  projects.forEach((project) => {
+    if (filter == "*" || project.dataset.type == filter) {
+      project.classList.remove("invisible");
+    } else {
+      project.classList.add("invisible");
+    }
+  });
+  console.log(filter);
+});
