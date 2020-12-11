@@ -452,7 +452,7 @@ ul {
 }
 
 .project_description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project_description h3:after {
@@ -460,10 +460,10 @@ ul {
   display: block;
   position: relative;
   left: 50%;
-  margin-left: -20px;
+  transform: translateX(-50%);
   margin-top: 8px;
   height: 2px;
-  width: 30px;
+  width: 50px;
   background-color: var(--color-light-grey);
 }
 
