@@ -38,8 +38,16 @@ navbarbutton.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
+  menu.classList.remove("open");
   const scrollTo = document.querySelector(link);
   scrollTo.scrollIntoView({ behavior: "smooth" });
+});
+
+//navbar togglebtn
+const togglebtn = document.querySelector(".toggle_btn");
+const menu = document.querySelector(".navbar_menu");
+togglebtn.addEventListener("click", () => {
+  menu.classList.toggle("open");
 });
 
 // Home contact me button
@@ -85,6 +93,13 @@ const workBtn = document.querySelector(".work_categories");
 const projectContainer = document.querySelector(".work_projects");
 const projects = document.querySelectorAll(".project");
 workBtn.addEventListener("click", (event) => {
+  const active = document.querySelector(".category_btn.selected");
+  active.classList.remove("selected");
+
+  const target =
+    event.target === "button" ? event.target : event.target.parentNode;
+  event.target.classList.add("selected");
+
   const filter =
     event.target.dataset.filter || event.target.parentNode.dataset.filter;
   if (filter == null) {
