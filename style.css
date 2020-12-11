@@ -400,6 +400,13 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
+}
+
+.work_projects.anim-out {
+  opacity: 0;
+  transform: scale(0.98) translateY(20px);
 }
 
 .project {

@@ -90,12 +90,15 @@ workBtn.addEventListener("click", (event) => {
   if (filter == null) {
     return;
   }
-  projects.forEach((project) => {
-    if (filter == "*" || project.dataset.type == filter) {
-      project.classList.remove("invisible");
-    } else {
-      project.classList.add("invisible");
-    }
-  });
-  console.log(filter);
+  projectContainer.classList.add("anim-out");
+  setTimeout(() => {
+    projects.forEach((project) => {
+      if (filter == "*" || project.dataset.type == filter) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+    projectContainer.classList.remove("anim-out");
+  }, 300);
 });
