@@ -176,7 +176,7 @@ ul {
   transition: background-color var(--animation-duration);
 }
 
-.navbar_item .active {
+.navbar_item.active {
   border-color: var(--color-light-white);
 }
 
